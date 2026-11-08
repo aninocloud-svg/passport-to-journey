@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Visa status logic lives only in `src/lib/visa/status.ts` and is covered by `status.test.ts`; UI must never compute status itself, so the never-guess rules stay testable.
+- Visa data providers are server-only adapters in `src/lib/visa/providers.server.ts`, selected by secrets; keys never reach the browser.
